@@ -1,0 +1,32 @@
+<div class = "min-h-screen
+min-w-screen
+bg-gradient-to-b
+from-gray-900
+to-blue-900">
+           <div class = "header pt-20">
+            <h1 class="text-center text-6xl text-teal-400 font-extrabold">
+                Tic-<span class="text-yellow-300">Tac</span>-Toe
+            </h1>
+           <h1 class="text-center text-orange-600 test-4xl mt-10 font-bold" *ngIf="!gameService.winner"
+           [ngClass]="{'text-teal-300':gameService.activePlayer=='O'}">
+            {{gameService.activePlayer}}'S TURN
+           </h1>  
+           <h1 class="text-center text-red-500 mt-10 text-4xl font-semibold"
+           *ngIf="gameService.winner">
+            {{gameService.activePlayer}} WON
+           </h1>
+           <button class="bg-purple-400
+           hover:bg-yellow-400
+           text-dark
+           font-bold
+           py-3
+           px-4
+           rounded
+           mx-auto
+           block
+           mt-5" 
+           *ngIf="gameService.gameOver"
+           (click)="resetGame()">Reset</button>              
+</div>
+<app-board></app-board>
+</div>
